@@ -1,4 +1,4 @@
-# walletgenerator.dev
+# walletgenerator.dev Project Specs
 
 ## Project Description
 
