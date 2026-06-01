@@ -1,0 +1,45 @@
+---
+const points = [
+  "EVM · Solana · Stellar · XRP Ledger · Bitcoin",
+  "Seed phrases + chain-specific private keys",
+  "Export to .env, JSON, CSV, Hardhat, Foundry",
+  "Runs locally — no backend, no account",
+];
+---
+
+<section class="relative overflow-hidden border-b border-ink-800">
+  <div
+    class="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(45,212,191,0.12),transparent)]"
+  >
+  </div>
+  <div class="container-page relative py-16 text-center md:py-20">
+    <span
+      class="inline-flex items-center gap-2 rounded-full border border-ink-700 bg-ink-800/60 px-3 py-1 text-xs text-slate-300"
+    >
+      <span class="h-1.5 w-1.5 rounded-full bg-accent-500"></span>
+      Open source · Browser-only · Built for developers
+    </span>
+    <h1 class="mx-auto mt-6 max-w-3xl text-4xl font-bold tracking-tight text-white md:text-5xl">
+      Generate developer wallets in seconds.
+    </h1>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-400">
+      Batch-create wallet sets for EVM, Solana, Stellar, XRP Ledger, and Bitcoin. Get seed
+      phrases, private keys, addresses, and exports for <code class="text-accent-400">.env</code
+      >, JSON, CSV, Hardhat, and Foundry.
+    </p>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <a href="#generator" class="btn-primary px-6 py-3 text-base">Generate developer wallets</a>
+      <a href="/supported-chains" class="btn-ghost px-6 py-3 text-base">Supported chains</a>
+    </div>
+    <ul class="mx-auto mt-10 grid max-w-3xl gap-2 text-sm text-slate-400 sm:grid-cols-2">
+      {
+        points.map((p) => (
+          <li class="flex items-center justify-center gap-2 sm:justify-start">
+            <span class="text-accent-400">✓</span>
+            {p}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

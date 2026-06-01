@@ -1,0 +1,36 @@
+---
+const formats = [
+  { name: ".env", body: "Ready-to-paste variables with seed phrases, keys, and RPC placeholders." },
+  { name: "JSON", body: "Structured wallet sets for scripts, fixtures, and tooling." },
+  { name: "CSV", body: "One row per wallet set for spreadsheets and bulk imports." },
+  { name: "Hardhat", body: "hardhat.config.ts with EVM accounts wired to testnet networks." },
+  { name: "Foundry", body: "PRIVATE_KEY_* env vars plus a foundry.toml rpc_endpoints snippet." },
+];
+---
+
+<section class="border-b border-ink-800 bg-ink-900/40">
+  <div class="container-page py-14">
+    <div class="mb-8 max-w-2xl">
+      <h2 class="text-2xl font-semibold text-white md:text-3xl">Exports that drop into your stack</h2>
+      <p class="mt-2 text-slate-400">
+        Export quality is the point. Every format includes seed phrases, addresses, and
+        chain-specific secrets with a development-only header.
+      </p>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      {
+        formats.map((f) => (
+          <div class="card">
+            <div class="font-mono text-sm font-semibold text-accent-400">{f.name}</div>
+            <p class="mt-2 text-sm text-slate-400">{f.body}</p>
+          </div>
+        ))
+      }
+    </div>
+    <a
+      href="/export-formats"
+      class="mt-6 inline-block text-sm font-medium text-accent-400 hover:text-accent-500"
+      >Browse export examples →</a
+    >
+  </div>
+</section>

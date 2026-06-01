@@ -1,0 +1,27 @@
+---
+const items = [
+  { title: "Browser-only", body: "All wallet generation runs locally. Nothing is sent to a server." },
+  { title: "No persistence", body: "Keys live in memory only. Refresh clears everything unless you export." },
+  { title: "No tracking", body: "No analytics on the generator. Generated values are never collected." },
+  { title: "Open source", body: "Inspect, audit, self-host, and contribute additional chains." },
+];
+---
+
+<section class="border-b border-ink-800 bg-ink-900/40">
+  <div class="container-page py-10">
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        items.map((item) => (
+          <div class="card">
+            <h3 class="text-sm font-semibold text-white">{item.title}</h3>
+            <p class="mt-1 text-sm text-slate-400">{item.body}</p>
+          </div>
+        ))
+      }
+    </div>
+    <p class="mt-6 text-center text-sm text-slate-500">
+      Designed for development and testing. Do not use generated wallets for meaningful mainnet
+      funds. <a href="/security" class="text-accent-400 hover:text-accent-500">Read the security model →</a>
+    </p>
+  </div>
+</section>

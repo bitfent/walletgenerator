@@ -1,0 +1,17 @@
+/* walletgenerator.dev — Starlight theme overrides (teal accent, dark-first). */
+:root {
+  --sl-color-accent-low: #103c38;
+  --sl-color-accent: #14b8a6;
+  --sl-color-accent-high: #5eead4;
+}
+
+:root[data-theme="light"] {
+  --sl-color-accent-low: #c7f0ea;
+  --sl-color-accent: #0d9488;
+  --sl-color-accent-high: #115e59;
+}
+
+/* A banner link back to the generator in the top nav area reads better teal. */
+.sl-markdown-content a {
+  text-underline-offset: 0.2em;
+}

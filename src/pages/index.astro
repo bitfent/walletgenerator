@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SecurityBanner from "../components/SecurityBanner.astro";
+import SupportedChains from "../components/SupportedChains.astro";
+import ExportFormats from "../components/ExportFormats.astro";
+import FAQ from "../components/FAQ.astro";
+import WalletGenerator from "../components/generator/WalletGenerator.tsx";
+---
+
+<BaseLayout>
+  <Hero />
+
+  <section id="generator" class="border-b border-ink-800">
+    <div class="container-page py-14">
+      <div class="mb-8 max-w-2xl">
+        <h2 class="text-2xl font-semibold text-white md:text-3xl">Generate wallet sets</h2>
+        <p class="mt-2 text-slate-400">
+          Pick a network mode, choose your chains, set a quantity, and generate. Seed phrases
+          and private keys stay hidden until you reveal them.
+        </p>
+      </div>
+      <WalletGenerator client:load />
+    </div>
+  </section>
+
+  <SecurityBanner />
+  <SupportedChains />
+  <ExportFormats />
+  <FAQ />
+
+  <section class="bg-ink-900/40">
+    <div class="container-page py-16 text-center">
+      <h2 class="text-2xl font-semibold text-white md:text-3xl">Open source and self-hostable</h2>
+      <p class="mx-auto mt-3 max-w-xl text-slate-400">
+        Inspect the code, audit the crypto, run it offline, or add a chain. Contributions
+        welcome.
+      </p>
+      <div class="mt-6 flex justify-center gap-3">
+        <a
+          href="https://github.com/bitfent/walletgenerator"
+          rel="noopener"
+          target="_blank"
+          class="btn-primary px-6 py-3 text-base">Star on GitHub</a
+        >
+        <a href="/security" class="btn-ghost px-6 py-3 text-base">Security model</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

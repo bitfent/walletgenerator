@@ -1,0 +1,65 @@
+---
+const faqs = [
+  {
+    q: "Are wallets generated on a server?",
+    a: "No. Wallets are generated locally in your browser.",
+  },
+  {
+    q: "Are seed phrases and private keys stored?",
+    a: "No. Generated wallets remain only in memory unless you export them. A refresh clears everything.",
+  },
+  {
+    q: "Does the generator return both seed phrase and private key?",
+    a: "Yes. Each wallet set includes the seed phrase plus the chain-specific private or secret key material required to use the wallet.",
+  },
+  {
+    q: "Can I use these wallets on mainnet?",
+    a: "Technically yes, but you should not use this tool for meaningful mainnet funds. It is designed for development and testing.",
+  },
+  {
+    q: "Why is one EVM wallet compatible with many chains?",
+    a: "EVM-compatible chains share the same key and address format. One EVM private key controls the same address on Ethereum, Polygon, Arbitrum, Optimism, Base, BNB Chain, Avalanche C-Chain, Mantle, Linea, zkSync Era, and other EVM chains.",
+  },
+  {
+    q: "Does a Stellar wallet exist immediately?",
+    a: "The keypair exists immediately, but the account does not exist on-chain until it is funded.",
+  },
+  {
+    q: "Does an XRP wallet exist immediately?",
+    a: "The keypair and address can be generated offline, but an XRP Ledger account must be funded before it becomes active on-chain.",
+  },
+  {
+    q: "What Bitcoin address type is generated?",
+    a: "Native SegWit P2WPKH addresses by default (bc1q… on mainnet, tb1q… on testnet).",
+  },
+  {
+    q: "Can I export to Hardhat and Foundry?",
+    a: "Yes. EVM wallets export as Hardhat and Foundry-compatible configuration snippets.",
+  },
+  {
+    q: "Is the project open source?",
+    a: "Yes. The repository is open source so you can inspect the implementation, self-host the tool, and contribute additional chain support.",
+  },
+];
+---
+
+<section class="border-b border-ink-800">
+  <div class="container-page py-14">
+    <h2 class="mb-8 text-2xl font-semibold text-white md:text-3xl">FAQ</h2>
+    <div class="grid gap-3 md:grid-cols-2">
+      {
+        faqs.map((faq) => (
+          <details class="card group">
+            <summary class="cursor-pointer list-none text-sm font-medium text-white">
+              <span class="flex items-center justify-between gap-2">
+                {faq.q}
+                <span class="text-accent-400 transition-transform group-open:rotate-45">+</span>
+              </span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-400">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

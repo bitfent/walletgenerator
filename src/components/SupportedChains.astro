@@ -1,0 +1,44 @@
+---
+const chains = [
+  {
+    name: "EVM",
+    detail: "0x address + private key",
+    note: "One key works across Ethereum, Polygon, Arbitrum, Optimism, Base, BNB Chain, Avalanche, Mantle, Linea, and zkSync Era.",
+  },
+  { name: "Solana", detail: "base58 public key + secret key", note: "Ed25519 keypair. base58 and byte-array secret key." },
+  { name: "Stellar", detail: "G… public key + S… secret", note: "Fund the account to activate it on Testnet." },
+  { name: "XRP Ledger", detail: "r… address + seed", note: "Account must be funded before it becomes active." },
+  { name: "Bitcoin", detail: "bc1q… / tb1q… address + WIF", note: "Native SegWit P2WPKH, mainnet or testnet." },
+];
+---
+
+<section class="border-b border-ink-800">
+  <div class="container-page py-14">
+    <div class="mb-8 max-w-2xl">
+      <h2 class="text-2xl font-semibold text-white md:text-3xl">Multi-chain by default</h2>
+      <p class="mt-2 text-slate-400">
+        Every wallet set spans the chains you select, each with the public identifier and the
+        secret material your tooling needs.
+      </p>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {
+        chains.map((chain) => (
+          <div class="card">
+            <div class="flex items-baseline justify-between">
+              <h3 class="text-lg font-semibold text-white">{chain.name}</h3>
+              <span class="font-mono text-xs text-accent-400">{chain.detail}</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-400">{chain.note}</p>
+          </div>
+        ))
+      }
+      <a
+        href="/supported-chains"
+        class="card flex items-center justify-center text-sm font-medium text-accent-400 hover:border-accent-500"
+      >
+        See all chain details →
+      </a>
+    </div>
+  </div>
+</section>
